@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * valhalla_election.features.inc
+ * valghalla_election.features.inc
  */
 
 /**
  * Implements hook_node_info().
  */
-function valhalla_election_node_info() {
+function valghalla_election_node_info() {
   $items = array(
     'constituency' => array(
       'name' => t('Valgstedskreds'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'election' => array(
@@ -22,9 +22,10 @@ function valhalla_election_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Valg'),
+      'title_label' => t('Titel på valg'),
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
